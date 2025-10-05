@@ -79,12 +79,12 @@ const otherPortfolios = await getCollection("sessions", (otherPortfolio) => {
 		<div
 			class="bg-notebook font-heading mx-auto flex w-fit flex-col gap-6 p-8 py-10 pr-20 pl-16 text-3xl"
 		>
-			<span class="text-primary-700">Incluye:</span>
+			<span class="text-primary-500">Incluye:</span>
 			<ul>
 				{content.map((item) => <li class="list-inside list-decimal text-2xl">{item}</li>)}
 			</ul>
 
-			<span class="font-heading text-primary-800 text-4xl">{price}€</span>
+			<span class="font-heading text-primary-600 text-4xl">{price}€</span>
 
 			<a href={`/inicio/#contact?pack=${id}`} class="">
 				<button

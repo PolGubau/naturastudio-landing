@@ -25,7 +25,7 @@ const siteData: SiteDataProps = {
  
 	// default image for meta tags if the page doesn't have an image already
 	defaultImage: {
-		src: "/images/media/sessions/familiar/1.jpg",
+		src: "/images/media/sessions/familiar/1.webp",
 		alt: "Naturastudio logo",
 	},
 };

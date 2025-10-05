@@ -19,7 +19,7 @@ export default function ContactActions() {
   const buildMessage = () => {
     const { name, email, date, message } = formData;
     return encodeURIComponent(
-      `👋🏼 Hola! Soy ${name}\n📅 Fecha del evento: ${date}\n📧 Email: ${email}\n💬 Mensaje:\n${message}`
+      `Missatge desde la web: \n 👋🏼 Hola! Soy ${name}\n📅 Fecha del evento: ${date}\n📧 Email: ${email}\n💬 Mensaje:\n${message}`
     );
   };
 
@@ -40,18 +40,18 @@ export default function ContactActions() {
         handleWhatsApp()}}
     >
       <label htmlFor="name">Nombre
-      <input name="name" type="text" placeholder="Tu nombre" required className="form__input" onChange={handleChange} />
+      <input name="name" type="text" placeholder="Nuria Fluvia" required className="form__input" onChange={handleChange} />
       </label>
       <label htmlFor="email">
         Correo electrónico
-      <input name="email" type="email" placeholder="Tu correo" required className="form__input" onChange={handleChange} />
+      <input name="email" type="email" placeholder="tuemail@ejemplo.com" required className="form__input" onChange={handleChange} />
       </label>
 
       <label htmlFor="date">Fecha del evento
-        <input name="date" type="date" required className="form__input" onChange={handleChange} /></label>
+        <input name="date" type="date" required placeholder="DD-MM-AAAA" className="form__input" onChange={handleChange} /></label>
 
       <label htmlFor="message">Observaciones
-      <textarea name="message" rows={5} placeholder="Tu mensaje" required className="form__input" onChange={handleChange} />
+      <textarea name="message" rows={5} placeholder="Querría que..." required className="form__input" onChange={handleChange} />
 
       </label>
 

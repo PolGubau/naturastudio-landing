@@ -5,9 +5,9 @@
  */
 
 import Button from "@components/Button/Button.astro";
-import heroImage from "@images/media/textures/3.jpg";
+import heroImage from "@images/media/textures/3.webp";
 import { Image } from "astro:assets";
-import imageBubble1 from "@images/media/sessions/familiar/3.jpg";
+import imageBubble1 from "@images/media/sessions/familiar/3.webp";
 import logo from "@images/logos/blanc.png";
 ---
 
@@ -41,8 +41,8 @@ import logo from "@images/logos/blanc.png";
 		>
 			<span class="sr-only"> Natura Studio </span>
 			<Image
-				width="600"
-				height="600"
+				width="1080"
+				height="1080"
 				src={logo}
 				alt="Logo"
 				class="w-[clamp(300px, 30vw, 800px)] motion-preset-slide-down select-none"
@@ -117,7 +117,7 @@ import logo from "@images/logos/blanc.png";
 
 <style>
 	.texture-bg {
-		background-image: url("/src/assets/images/media/textures/5.jpg");
+		background-image: url("/src/assets/images/media/textures/5.webp");
 		background-size: cover;
 		background-position: center;
 		@media screen and (min-width: 768px) {
@@ -183,5 +183,3 @@ import logo from "@images/logos/blanc.png";
 		}
 	}
 </style>
-
-

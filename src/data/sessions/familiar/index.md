@@ -7,14 +7,22 @@ content:
   - Sitio a elegir
   - 20 Ediciones
 cta: Me interesa
-heroImage: ./couple-2-min-3.jpg
-
+heroImage: ../../../assets/images/media/sessions/familiar/1.webp
 images:
   [
-    [./couple-2-min-3.jpg, ./couple-2-min-3.jpg],
-    [./rings-wood-min-3.jpg, ./seals-min-3.jpg, ./rings-wood-min-3.jpg],
-    [./couple-9-3.jpg],
-    [./cake-min-3.jpg, ./dress-min-3.jpg],
+    [
+      ../../../assets/images/media/sessions/familiar/2.webp,
+    ../../../assets/images/media/sessions/familiar/3.webp,
+    ../../../assets/images/media/sessions/familiar/4.webp
+    ],
+    [
+      ../../../assets/images/media/sessions/familiar/5.webp
+    ],
+    [
+      ../../../assets/images/media/sessions/familiar/6.webp,
+      ../../../assets/images/media/sessions/familiar/7.webp,
+      ../../../assets/images/media/sessions/familiar/8.webp
+    ],
   ]
 ---
 

@@ -52,10 +52,22 @@ const { title, content, heroImage } = portfolio.data;
 	<div class="flex flex-col justify-between gap-2">
 		<div>
 			<h3 class="h3 text-primary-500 tracking-widest">{title}</h3>
-			<p class="mt-4 lg:text-lg">{content.join(", ")}</p>
+			<p class="mt-4 lg:text-lg">
+				{
+					direction === "vertical" ? (
+						content.join(", ")
+					) : (
+						<ul>
+							{content.map((item) => (
+								<li> {item}</li>
+							))}
+						</ul>
+					)
+				}
+			</p>
 		</div>
 		<div class="flex">
-			<Button variant="ghost" arrow="right" href={`/sessions/${portfolio.id}`} class="pl-0">
+			<Button variant="ghost" arrow="right" href={`/sesiones/${portfolio.id}`} class="pl-0">
 				Ver más
 			</Button>
 		</div>

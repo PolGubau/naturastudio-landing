@@ -8,7 +8,7 @@ interface Props {
 const { class: className } = Astro.props as Props;
 
 import ContactActions from "@components/Forms/ContactActiones";
-import ringsImage from "@images/media/sessions/familiar/7.jpg";
+import ringsImage from "@images/media/sessions/familiar/7.webp";
 ---
 
 <section
@@ -16,7 +16,7 @@ import ringsImage from "@images/media/sessions/familiar/7.jpg";
 	class="mx-auto max-w-md px-4 py-8 md:max-w-6xl md:py-12"
 	class:list={[className]}
 >
-	<h2 class="h2 md:px-12 lg:text-6xl">¡Hablemos!</h2>
+	<h2 class="h2 text-primary-600 drop-shadow-md md:px-12 lg:text-6xl">¡Hablemos!</h2>
 	<div class="grid gap-y-10 md:grid-cols-2">
 		<div class="border-primary-300 pt-8 md:border-r md:pr-20 md:pl-12">
 			<p class="description text-lg">
