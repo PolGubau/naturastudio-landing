@@ -1,0 +1,44 @@
+---
+import Contact from "@components/Contact/Contact.astro";
+import TestimonialQuote from "@components/Testimonials/TestimonialQuote.astro";
+import logo from "@images/logos/blanc.png";
+import textura from "@images/media/textures/fons_retallat.jpg";
+import { Image } from "astro:assets";
+const thisYear = new Date().getFullYear();
+---
+
+<section class="relative w-full">
+	<TestimonialQuote />
+	<div class="z-10">
+		<Contact />
+	</div>
+
+	<div class="relative">
+		<div class="bg-secondary-100 relative w-full">
+			<div data-speed="-0.2" class="parallax-img relative w-full overflow-hidden">
+				<Image
+					src={textura}
+					class="h-[900px] w-full bg-[length:100%_100%] bg-center bg-no-repeat object-cover select-none"
+					alt="textura"
+				/>
+				<div class="from-secondary-950 absolute inset-0 bg-gradient-to-t to-30%"></div>
+				<div class="from-secondary-100 absolute inset-0 bg-gradient-to-b to-40%"></div>
+			</div>
+
+			<div class="bg-secondary-950 -mt-8 pb-[100px] text-white">
+				<div class="flex flex-col items-center justify-center gap-1">
+					<Image
+						alt="Naturastudio logo"
+						src={logo}
+						width={300}
+						height={180}
+						class="h-auto w-full max-w-[300px]"
+					/>
+					<ul class="flex items-center gap-2">
+						<li>©Naturastudio, {thisYear}</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

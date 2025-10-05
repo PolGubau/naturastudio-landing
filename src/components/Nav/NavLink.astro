@@ -1,0 +1,40 @@
+---
+import { type navLinkItem } from "@config/navData.json";
+
+interface Props {
+	navItem: navLinkItem;
+	class?: string;
+}
+
+const { navItem, class: className } = Astro.props as Props;
+const { text, link, newTab = false, hoverImage } = navItem;
+
+
+const image = `../../../../images/${hoverImage}`
+---
+
+<li>
+  <a
+    class:list={[
+      `nav__link--base group relative flex w-full items-center justify-center ${className}`,
+      { "": Astro.url.pathname === link },
+    ]}
+    href={link}
+    target={newTab ? "_blank" : ""}
+    rel={newTab ? "noopener noreferrer" : ""}
+  >
+    {text}
+
+    <!-- hover image -->
+    <div
+      class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-20 scale-125"
+    >
+      <img
+        src={image}
+        alt=""
+        class="h-[2em] object-contain"
+      />
+    </div>
+  </a>
+</li>
+

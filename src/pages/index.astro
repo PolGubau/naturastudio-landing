@@ -1,0 +1,41 @@
+---
+import siteData from "@config/siteData.json";
+import Logo from "@images/logos/blanc.png";
+import video from "@images/media/bgVideos/1.mp4";
+import BaseHead from "@layouts/BaseHead.astro";
+import Providers from "@layouts/Providers.astro";
+import { Image } from "astro:assets";
+---
+
+<Providers>
+	<BaseHead type={"general"} title={siteData.title} description={siteData.description} />
+
+	<body class="m-0 overflow-hidden bg-[#665444] p-0">
+		<div class="relative grid h-screen w-screen place-items-center">
+			<!-- Video de fondo -->
+			<video
+				class="motion-opacity-in-0 absolute top-0 left-0 h-full w-full object-cover"
+				autoplay
+				muted
+				loop
+				playsinline
+			>
+				<source src={video} type="video/mp4" />
+				Tu navegador no soporta video.
+			</video>
+
+			<!-- Overlay sutil -->
+			<div class="absolute top-0 left-0 h-screen w-screen bg-black/50"></div>
+
+			<!-- Imagen centrada con animación -->
+			<a href="/inicio">
+				<Image
+					src={Logo}
+					alt="Logo"
+					class="motion-preset-blur-up motion-delay-200 h-40 scale-90 cursor-pointer object-cover md:w-[400px]"
+					width={240}
+				/>
+			</a>
+		</div>
+	</body>
+</Providers>

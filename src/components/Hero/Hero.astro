@@ -1,0 +1,185 @@
+---
+/**
+ * * Hero with background image
+ * You'll want a mobile image, and a desktop image for this.
+ */
+
+import Button from "@components/Button/Button.astro";
+import heroImage from "@images/media/textures/3.jpg";
+import { Image } from "astro:assets";
+import imageBubble1 from "@images/media/sessions/familiar/3.jpg";
+import logo from "@images/logos/blanc.png";
+---
+
+<section id="hero" class="relative z-10 flex min-h-[90lvh] w-full">
+	<!-- background image -->
+	<div class="absolute -z-10 h-full w-full overflow-hidden">
+		<div
+			class="from-primary-900/60 pointer-events-none absolute inset-0 z-10 h-[30vh] bg-gradient-to-b select-none"
+		>
+		</div>
+		<div class="bg-primary-900/10 pointer-events-none absolute inset-0 z-10 select-none"></div>
+
+		<div class="pointer-events-none absolute inset-0 select-none">
+			<Image
+				data-speed="0.3"
+				src={heroImage}
+				class="parallax-img select-top h-full w-full bg-bottom object-cover object-top"
+				alt="wedding"
+				aria-hidden="true"
+				loading="eager"
+				height={1400}
+			/>
+		</div>
+	</div>
+
+	<!-- hero items -->
+	<div class="site-container relative flex w-full flex-col gap-20">
+		<!-- Hero text -->
+		<h1
+			class="text-primary-100 z-20 mx-auto justify-center py-4 text-center text-5xl uppercase md:text-9xl"
+		>
+			<span class="sr-only"> Natura Studio </span>
+			<Image
+				width="600"
+				height="600"
+				src={logo}
+				alt="Logo"
+				class="w-[clamp(300px, 30vw, 800px)] motion-preset-slide-down select-none"
+			/>
+		</h1>
+
+		<Image
+			src={imageBubble1}
+			alt="wedding"
+			class="absolute bottom-0 left-1/2 aspect-square -translate-x-1/2 transform rounded-t-full object-cover md:top-[370px] md:h-[40vw] md:w-[40vw]"
+			aria-hidden="true"
+			loading="eager"
+		/>
+
+		<img
+			src="/images/media/flowers/flors_web_6.svg"
+			alt="Logo"
+			class="absolute right-6 bottom-20 w-20 md:w-34"
+		/>
+		<img
+			src="/images/media/flowers/flors_web_7.svg"
+			alt="Logo"
+			class="absolute top-1/2 right-20 w-20 -translate-y-[150px] md:w-34"
+		/>
+		<img
+			src="/images/media/flowers/flors_web_8.svg"
+			alt="Logo"
+			class="absolute bottom-40 left-10 w-24"
+		/>
+
+		<nav
+			class="motion-preset-slide-down motion-delay-500 mt-10 flex h-full flex-wrap items-end justify-center gap-4"
+		>
+			<Button
+				variant="ghost"
+				arrow="right"
+				href="/inicio#contact"
+				class="border-primary-100/40 hover:border-primary-100/70 focus:border-primary-100/70 bg-primary-50/70 z-30 mb-20 h-fit rounded-xl border-2 pl-4 text-xl backdrop-blur-md md:text-3xl"
+			>
+				¡Hablemos!
+			</Button>
+		</nav>
+	</div>
+</section>
+
+<section class="bg-secondary-200 texture-bg relative z-10 -mt-6 py-14">
+	<div class="site-container grid gap-14 md:grid-cols-[auto_1fr]">
+		<img
+			width="150"
+			height="150"
+			src="/images/media/flowers/flors_web_3.svg"
+			alt="Logo"
+			class="w-[100px] md:w-[150px]"
+		/>
+		<div
+			class="motion-preset-slide-up motion-delay-500 mt-4 flex flex-col gap-6 text-lg text-pretty md:text-2xl"
+		>
+			<p>
+				Cada clic de mi cámara no solo captura momentos, sino que busca <strong
+					>revelar la esencia natural</strong
+				> y auténtica que encuentro en el mundo que me rodea.
+			</p>
+			<p>
+				La naturaleza, con su belleza sin igual, se convierte en una <strong
+					>fuente constante de inspiración</strong
+				>
+				para mi trabajo. La conexión entre mi marca y el entorno natural es profunda y fundamental.
+			</p>
+		</div>
+	</div>
+</section>
+
+<style>
+	.texture-bg {
+		background-image: url("/src/assets/images/media/textures/5.jpg");
+		background-size: cover;
+		background-position: center;
+		@media screen and (min-width: 768px) {
+			clip-path: polygon(
+				0% 0%,
+				0% 95%,
+				0% 100%,
+				2% 95%,
+				4% 99%,
+				6% 98%,
+				9% 98%,
+				12% 96%,
+				13% 97%,
+				16% 96%,
+				19% 100%,
+				24% 96%,
+				30% 97%,
+				35% 93%,
+				38% 100%,
+				46% 95%,
+				46% 95%,
+				45% 95%,
+				50% 98%,
+				50% 98%,
+				56% 93%,
+				59% 99%,
+				67% 95%,
+				70% 98%,
+				76% 93%,
+				82% 100%,
+				84% 95%,
+				90% 100%,
+				93% 94%,
+				98% 99%,
+				100% 99%,
+				100% 99%,
+				100% 95%,
+				100% 96%,
+				100% 0%,
+				96% 2%,
+				92% 0%,
+				88% 5%,
+				84% 2%,
+				83% 5%,
+				80% 0%,
+				78% 3%,
+				74% 4%,
+				71% 0%,
+				65% 4%,
+				58% 5%,
+				53% 4%,
+				48% 2%,
+				43% 0%,
+				40% 6%,
+				34% 2%,
+				30% 6%,
+				23% 3%,
+				17% 6%,
+				6% 2%,
+				4% 4%,
+				2% 1%
+			);
+		}
+	}
+</style>

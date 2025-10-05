@@ -1,0 +1,117 @@
+---
+import { Icon } from "astro-icon/components";
+import { getCollection } from "astro:content";
+const raw = await getCollection("testimonials");
+
+const testimonials = raw.map((item) => item.data);
+const randomTestimonial = testimonials[Math.floor(Math.random() * testimonials.length)];
+---
+
+<section class="bg-secondary-100 relative">
+	<div class="texture-bg mt-12 py-10 md:mt-16 md:py-16">
+		<div class="mx-auto flex max-w-4xl items-start gap-2 px-4">
+			<div>
+				<Icon
+					name="gridicons/quote"
+					class="text-primary-200 size-8 -translate-y-4 md:size-20"
+					aria-hidden="true"
+				/>
+			</div>
+			<p class="text-primary-600 mx-auto text-center text-2xl uppercase">
+				{randomTestimonial.testimonial}
+			</p>
+			<div>
+				<Icon
+					name="gridicons/quote"
+					class="text-primary-200 size-8 -translate-y-4 -scale-x-100 md:size-20"
+					aria-hidden="true"
+				/>
+			</div>
+		</div>
+
+		<div class="xs:grid-cols-2 mt-6 grid">
+			<div class="col-start-2">
+				<p class="h3 text-primary-600">- {randomTestimonial.title}</p>
+			</div>
+		</div>
+	</div>
+	<img
+		src="/images/media/flowers/flors_web_4.svg"
+		alt="Logo"
+		class="absolute -top-4 right-2 w-20 lg:-top-20 lg:right-[5vw] lg:w-34 2xl:right-[20vw]"
+	/>
+	<img
+		src="/images/media/flowers/flors_web_5.svg"
+		alt="Logo"
+		class="absolute bottom-4 left-0 w-20 lg:-bottom-20 lg:left-1/4 lg:w-34 lg:-translate-x-[150px] lg:-rotate-12"
+	/>
+</section>
+
+<style>
+	.texture-bg {
+		background-image: url("/src/assets/images/media/textures/4.jpg");
+		background-size: cover;
+		background-position: center;
+		@media screen and (min-width: 768px) {
+			clip-path: polygon(
+				0% 8%,
+				0% 89%,
+				0% 100%,
+				2% 95%,
+				4% 99%,
+				6% 98%,
+				9% 98%,
+				12% 96%,
+				13% 97%,
+				16% 96%,
+				19% 100%,
+				24% 96%,
+				30% 97%,
+				35% 93%,
+				38% 100%,
+				46% 95%,
+				46% 95%,
+				45% 95%,
+				50% 98%,
+				50% 98%,
+				56% 93%,
+				59% 99%,
+				67% 95%,
+				70% 98%,
+				76% 93%,
+				82% 100%,
+				84% 95%,
+				90% 100%,
+				93% 94%,
+				98% 99%,
+				100% 99%,
+				100% 99%,
+				100% 95%,
+				100% 96%,
+				100% 9%,
+				96% 2%,
+				92% 8%,
+				88% 5%,
+				84% 2%,
+				83% 5%,
+				80% 0%,
+				78% 3%,
+				74% 4%,
+				71% 0%,
+				65% 4%,
+				58% 5%,
+				53% 4%,
+				48% 2%,
+				43% 0%,
+				40% 6%,
+				34% 2%,
+				30% 6%,
+				23% 3%,
+				17% 6%,
+				6% 2%,
+				4% 4%,
+				2% 1%
+			);
+		}
+	}
+</style>

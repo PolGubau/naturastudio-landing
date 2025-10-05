@@ -1,0 +1,45 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+	class?: string;
+}
+
+const { class: className } = Astro.props as Props;
+
+import ContactActions from "@components/Forms/ContactActiones";
+import ringsImage from "@images/media/sessions/familiar/7.jpg";
+---
+
+<section
+	id="contact"
+	class="mx-auto max-w-md px-4 py-8 md:max-w-6xl md:py-12"
+	class:list={[className]}
+>
+	<h2 class="h2 md:px-12 lg:text-6xl">¡Hablemos!</h2>
+	<div class="grid gap-y-10 md:grid-cols-2">
+		<div class="border-primary-300 pt-8 md:border-r md:pr-20 md:pl-12">
+			<p class="description text-lg">
+				¿Tienes preguntas o estás listo para obtener un presupuesto? ¡Estoy aquí para ayudar!
+				Contáctame y hablemos sobre cómo puedo capturar tus momentos especiales.
+			</p>
+			<div class="mx-auto mt-8 aspect-square">
+				<Image
+					src={ringsImage}
+					alt="wedding rings"
+					width={450}
+					densities={[1.5, 2]}
+					class="h-full w-full object-cover"
+				/>
+			</div>
+		</div>
+		<div class="relative md:pr-12 md:pl-20">
+			<ContactActions client:load />
+			<img
+				src="/images/media/flowers/flors_web_5.svg"
+				alt="Logo"
+				class="absolute -bottom-20 left-0 z-20 w-20 lg:left-3/4 lg:w-34 lg:translate-x-[150px] lg:-rotate-12"
+			/>
+		</div>
+	</div>
+</section>

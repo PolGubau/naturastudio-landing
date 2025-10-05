@@ -1,0 +1,25 @@
+---
+import SiteLogo from "@components/SiteLogo/SiteLogo.astro";
+import navData from "@config/navData.json";
+import NavLink from "./NavLink.astro";
+
+const [pre, post] = [
+	navData.slice(0, Math.ceil(navData.length / 2)),
+	navData.slice(Math.ceil(navData.length / 2), navData.length),
+];
+---
+
+
+
+<div class="flex flex-auto justify-center items-center gap-4 max-md:hidden">
+
+  <ul class="justify-end flex">
+    {pre.map((navItem) =><NavLink {navItem} class="h-10" />)}
+  </ul>
+  
+  <SiteLogo />
+  
+  <ul class="justify-end flex">
+    {post.map((navItem) =><NavLink {navItem} class="h-10" />)}
+  </ul>
+</div>
