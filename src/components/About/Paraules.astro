@@ -1,80 +1,64 @@
 ---
 const group1 = ["natural", "sostenible"];
 
-const group2 = [
-  "creativa",
-  "observadora",
-  "empática",
-  "original",
-  "cercana",
-  "aventurera",
-];
+const group2 = ["creativa", "observadora", "empática", "original", "cercana", "aventurera"];
 
 const group3 = [
-  "apasionada",
-  "sensible",
-  "soñadora",
-  "detallista",
-  "expresiva",
-  "sutil",
-  "exploradora",
-  "curiosa",
-  "profesional",
-  "especial",
-  "imprevisible",
-  "familiar",
-  "flexible",
-  "auténtica",
-  "sorprendente",
-  "alegre",
-  "entusiasta",
-  "divertida",
-  "agradable",
-  "estratégica",
-  "orgánica",
-  "emotiva",
-  "inspiradora",
-  "mágica",
+	"apasionada",
+	"sensible",
+	"soñadora",
+	"detallista",
+	"expresiva",
+	"sutil",
+	"exploradora",
+	"curiosa",
+	"profesional",
+	"especial",
+	"imprevisible",
+	"familiar",
+	"flexible",
+	"auténtica",
+	"sorprendente",
+	"alegre",
+	"entusiasta",
+	"divertida",
+	"agradable",
+	"estratégica",
+	"orgánica",
+	"emotiva",
+	"inspiradora",
+	"mágica",
 ];
 
 const [group2a, group2b] = [
-  group2.slice(0, Math.ceil(group2.length / 2)),
-  group2.slice(Math.ceil(group2.length / 2)),
+	group2.slice(0, Math.ceil(group2.length / 2)),
+	group2.slice(Math.ceil(group2.length / 2)),
 ];
 const [group3a, group3b] = [
-  group3.slice(0, Math.ceil(group3.length / 2)),
-  group3.slice(Math.ceil(group3.length / 2)),
+	group3.slice(0, Math.ceil(group3.length / 2)),
+	group3.slice(Math.ceil(group3.length / 2)),
 ];
 ---
 
-<section class="py-10 md:py-20">
-
-  <!-- create a word cloud with the words from the groups -->
-  <div class="flex flex-col mx-auto max-w-xl items-center justify-center text-center text-secondary-500 gap-2">
-    <p class="flex flex-wrap justify-center gap-3">
-      {group3a.map((word) => (
-        <span class="word text-md md:text-2xl" >{word}</span>
-      ))}
-    </p>
-    <p class=" flex flex-wrap justify-center gap-3">
-      {group2a.map((word) => (
-        <span class="word text-xl md:text-4xl font-medium" >{word}</span>
-      ))}
-    </p>
-    <p class="flex flex-wrap justify-center gap-3">
-      {group1.map((word) => (
-        <span class="word text-4xl md:text-6xl font-bold">{word}</span>
-      ))}
-    </p>
-    <p class="flex flex-wrap justify-center gap-3">
-      {group2b.map((word) => (
-        <span class="word text-xl md:text-4xl font-medium" >{word}</span>
-      ))}
-    </p>
-    <p class="flex flex-wrap justify-center gap-3">
-      {group3b.map((word) => (
-        <span class="word text-md md:text-2xl" >{word}</span>
-      ))}
-    </p>
-  </div>
+<section class="font-heading py-10 md:py-20">
+	<!-- create a word cloud with the words from the groups -->
+	<div
+		class="text-secondary-500 mx-auto flex max-w-xl flex-col items-center justify-center gap-2 text-center"
+	>
+		<p class="flex flex-wrap justify-center gap-3">
+			{group3a.map((word) => <span class="word text-md md:text-2xl">{word}</span>)}
+		</p>
+		<p class="flex flex-wrap justify-center gap-3">
+			{group2a.map((word) => <span class="word text-xl font-medium md:text-4xl">{word}</span>)}
+		</p>
+		<p class="flex flex-wrap justify-center gap-3">
+			{group1.map((word) => <span class="word text-4xl font-bold md:text-6xl">{word}</span>)}
+		</p>
+		<p class="flex flex-wrap justify-center gap-3">
+			{group2b.map((word) => <span class="word text-xl font-medium md:text-4xl">{word}</span>)}
+		</p>
+		<p class="flex flex-wrap justify-center gap-3">
+			{group3b.map((word) => <span class="word text-md md:text-2xl">{word}</span>)}
+		</p>
+	</div>
 </section>
