@@ -8,7 +8,6 @@ interface Props {
 }
 
 const { startStyle = "default", rest } = Astro.props as Props;
-
 ---
 
 <div
@@ -17,18 +16,14 @@ const { startStyle = "default", rest } = Astro.props as Props;
 	transition:name={`nav`}
 	{...rest}
 >
-	<div class="mx-auto flex w-full" class:list={[{ "text-secondary-900": startStyle === "default" }]}>
-
+	<div class="mx-auto flex w-full" class:list={[{ "": startStyle === "default" }]}>
 		<div class="site-container flex h-16 w-full items-center">
-			<header class="w-full flex justify-center">
-
+			<header class="flex w-full justify-center">
 				<NavLinks />
-					 
 
-					<!-- mobile nav menu, only load on small screens where it is visible -->
-					<div class="md:hidden">
-						<MobileNav />
-					</div>
+				<!-- mobile nav menu, only load on small screens where it is visible -->
+				<div class="md:hidden">
+					<MobileNav />
 				</div>
 			</header>
 		</div>
@@ -74,8 +69,7 @@ const { startStyle = "default", rest } = Astro.props as Props;
 	}
 
 	#nav__container.scrolled {
-		/* @apply bg-secondary-50 py-0; */
-		background-color: var(--color-secondary-50);
+		background-color: var(--color-secondary-400);
 		padding-block: 0;
 	}
 </style>

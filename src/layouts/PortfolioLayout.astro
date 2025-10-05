@@ -9,25 +9,25 @@ import { type CollectionEntry, getCollection } from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
 
 interface Props {
-	portfolio: CollectionEntry<"portfolios">;
+	portfolio: CollectionEntry<"sessions">;
 }
 
 import headerImage from "@images/portfolio-header-crop-min.jpg";
-import Providers from "./Providers.astro";
 
 const { portfolio } = Astro.props as Props;
-const { title, description, date, images, clients, location, heroImage } = portfolio.data;
+const { title, content, images, price, heroImage } = portfolio.data;
 
 // find other portfolios to show later down the page
-const otherPortfolios = await getCollection("portfolios", (otherPortfolio) => {
+const otherPortfolios = await getCollection("sessions", (otherPortfolio) => {
 	// filter out draft pages
 	return otherPortfolio.data.draft !== true && otherPortfolio.id !== portfolio.id;
 });
 ---
+
 <BaseLayout
 	type="general"
 	title={title}
-	description={description}
+	description={`Pack que incluye ${content.join(", ")} por solo ${price}€.`}
 	heroImage={heroImage}
 	navStartStyle="white"
 >
@@ -73,13 +73,16 @@ const otherPortfolios = await getCollection("portfolios", (otherPortfolio) => {
 		<h2
 			class="h3 text-primary-500 mt-10 flex flex-col items-center justify-center gap-x-3 gap-y-1 tracking-widest md:flex-row"
 		>
-			<div>
-				{clients.join(" & ")}
-			</div>
-			<span class="hidden md:inline">|</span>
-			<hr class="border-primary-400 w-1/3 md:hidden" />
-			<span>{location}</span>
+			{title}
 		</h2>
+		<div>
+			<span>Incluye:</span>
+			<ul>
+				{content.map((item, index) => <li>{item}</li>)}
+			</ul>
+		</div>
+
+		<span>{price}€</span>
 
 		<!-- slot really only fuctions as a longer description -->
 		<div class="description mt-6 text-center text-pretty md:text-lg">
@@ -112,9 +115,8 @@ const otherPortfolios = await getCollection("portfolios", (otherPortfolio) => {
 	<TestimonialQuote />
 
 	<section class="mx-auto mt-12 px-4 md:mt-16 md:max-w-5xl">
-		<h3 class="h2 text-center">More Portfolios</h3>
+		<h3 class="h2 text-center">Otros packs</h3>
 		<PortfolioGrid portfolios={otherPortfolios} noTransitions />
 	</section>
 	<Contact class="mt-12" />
 </BaseLayout>
- 

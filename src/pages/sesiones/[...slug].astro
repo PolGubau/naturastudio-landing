@@ -5,7 +5,7 @@ import { type InferGetStaticPropsType } from "astro";
 import { type CollectionEntry, getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
-	const portfolios = await getCollection("portfolios", ({ data }) => {
+	const portfolios = await getCollection("sessions", ({ data }) => {
 		// filter out draft pages
 		return data.draft !== true;
 	});

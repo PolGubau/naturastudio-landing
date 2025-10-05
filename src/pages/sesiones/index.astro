@@ -1,26 +1,71 @@
 ---
 // components
 import PortfolioGrid from "@components/Portfolio/PortfolioGrid.astro";
-import TestimonialQuote from "@components/Testimonials/TestimonialQuote.astro";
 // layout
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
-const portfolios = await getCollection("portfolios", ({ data }) => {
+const portfolios = await getCollection("sessions", ({ data }) => {
 	// filter out draft pages
 	return data.draft !== true;
 });
 ---
 
 <BaseLayout title="Portfolios" description="Portfolio page for my projects and work.">
-	<div class="site-container pt-24 md:pt-36">
-		<div class="mx-auto max-w-6xl text-center">
-			<h1 class="h2 text-pretty uppercase">
-				Packs preparados para revivir tus momentos más especiales.
-			</h1>
-		</div>
+	<div class="texture-bg mx-auto flex justify-center pt-40 pb-30 text-center">
+		<h1 class="h2 text-primary-100 max-w-4xl text-pretty uppercase">
+			Packs preparados para revivir tus momentos más especiales
+		</h1>
+	</div>
+	<div class="site-container pt-8 md:pt-10">
 		<PortfolioGrid portfolios={portfolios} />
 	</div>
-
-	<TestimonialQuote />
 </BaseLayout>
+
+<style>
+	.texture-bg {
+		background-image: url("/src/assets/images/media/textures/3.jpg");
+		background-size: cover;
+		background-position: center;
+		@media screen and (min-width: 768px) {
+			clip-path: polygon(
+				0% 0%,
+				0% 95%,
+				0% 100%,
+				2% 95%,
+				4% 99%,
+				6% 98%,
+				9% 98%,
+				12% 96%,
+				13% 97%,
+				16% 96%,
+				19% 100%,
+				24% 96%,
+				30% 97%,
+				35% 93%,
+				38% 100%,
+				46% 95%,
+				46% 95%,
+				45% 95%,
+				50% 98%,
+				50% 98%,
+				56% 93%,
+				59% 99%,
+				67% 95%,
+				70% 98%,
+				76% 93%,
+				82% 100%,
+				84% 95%,
+				90% 100%,
+				93% 94%,
+				98% 99%,
+				100% 99%,
+				100% 99%,
+				100% 95%,
+				100% 96%,
+				100% 0%,
+				0% 0%
+			);
+		}
+	}
+</style>
