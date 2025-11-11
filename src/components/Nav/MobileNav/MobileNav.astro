@@ -4,24 +4,28 @@ import navData from "@config/navData.json";
 import { Icon } from "astro-icon/components";
 ---
 
-<div id="mobile-nav__container">
-	<button
-		id="mobile-nav__burger"
-		aria-label="open navigation menu"
-		aria-haspopup="true"
-		aria-expanded="false"
-		class="primary-focus h-10 w-10 rounded-none"
-	>
-		<!-- hamburger icon to open menu -->
-		<Icon
-			name="tabler:menu-2"
-			class="m-auto inline-block h-8 w-8 stroke-current"
-			aria-hidden="true"
-		/>
-	</button>
-	<div
+<div id="mobile-nav__container" class="w-full">
+	<header class="flex w-full items-center justify-between gap-8 rounded-none px-2 text-neutral-100">
+		<h2>Natura Studio</h2>
+
+		<button
+			id="mobile-nav__burger"
+			aria-label="open navigation menu"
+			aria-haspopup="true"
+			aria-expanded="false"
+			class="primary-focus flex h-10 w-10"
+		>
+			<!-- hamburger icon to open menu -->
+			<Icon
+				name="tabler:menu-2"
+				class="m-auto inline-block h-8 w-8 stroke-current"
+				aria-hidden="true"
+			/>
+		</button>
+	</header>
+	<aside
 		id="mobile-nav__content"
-		class="whitepace-nowrap bg-secondary-50 text-secondary-900 fixed top-0 -right-72 z-20 hidden h-screen w-72 items-center overflow-x-hidden text-lg font-normal transition-all duration-300"
+		class="whitepace-nowrap text-secondary-50 bg-secondary-900 fixed top-0 -right-72 z-20 hidden h-screen w-72 items-center overflow-x-hidden text-lg font-normal transition-all duration-300"
 	>
 		<div class="w-full px-2">
 			<div class="mx-1 my-2 flex w-full justify-end pr-4 pl-6">
@@ -37,13 +41,12 @@ import { Icon } from "astro-icon/components";
 				<ul class="mx-1 mt-2 text-xl">
 					{
 						// if dropdown exists, setup the dropdown, otherwise it is just a link
-						navData.map((navItem) =><NavLink {navItem} />)
+						navData.map((navItem) => <NavLink {navItem} />)
 					}
 				</ul>
 			</nav>
-			 
 		</div>
-	</div>
+	</aside>
 
 	<!-- backdrop button to also close menu -->
 	<button

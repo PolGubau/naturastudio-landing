@@ -1,5 +1,4 @@
 ---
-
 import Footer from "@components/Footer/Footer.astro";
 import Nav from "@components/Nav/Nav.astro";
 import BaseHead from "@layouts/BaseHead.astro";
@@ -25,28 +24,26 @@ const {
 	noindex = false,
 } = Astro.props as Props;
 ---
+
 <Providers>
-
-<!doctype html>
-<html lang="en" transition:animate="fade">
-	<head>
-		<BaseHead
-			type={type}
-			title={title}
-			description={description}
-			image={heroImage ? heroImage : undefined}
-			noindex={noindex}
-		/>
-	</head>
-	<body id="body" class="bg-secondary-50 text-secondary-900">
-		<div class="min-h-screen">
-			<Nav startStyle={navStartStyle} />
-			<main>
-				<slot />
-			</main>
-		</div>
-		<Footer />
-	</body>
-</html>
+	<html lang="en" transition:animate="fade">
+		<head>
+			<BaseHead
+				type={type}
+				title={title}
+				description={description}
+				image={heroImage ? heroImage : undefined}
+				noindex={noindex}
+			/>
+		</head>
+		<body id="body" class="bg-secondary-50 text-secondary-900 max-w-screen overflow-x-hidden">
+			<div class="min-h-screen">
+				<Nav startStyle={navStartStyle} />
+				<main>
+					<slot />
+				</main>
+			</div>
+			<Footer />
+		</body>
+	</html>
 </Providers>
-

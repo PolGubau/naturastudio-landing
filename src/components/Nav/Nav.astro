@@ -18,11 +18,11 @@ const { startStyle = "default", rest } = Astro.props as Props;
 >
 	<div class="mx-auto flex w-full" class:list={[{ "": startStyle === "default" }]}>
 		<div class="site-container flex h-16 w-full items-center">
-			<header class="flex w-full justify-center">
+			<header class="flex w-full md:justify-center">
 				<NavLinks />
 
 				<!-- mobile nav menu, only load on small screens where it is visible -->
-				<div class="md:hidden">
+				<div class="w-full md:hidden">
 					<MobileNav />
 				</div>
 			</header>
@@ -69,7 +69,8 @@ const { startStyle = "default", rest } = Astro.props as Props;
 	}
 
 	#nav__container.scrolled {
-		background-color: var(--color-secondary-400);
+		background-color: var(--color-secondary-900);
 		padding-block: 0;
+		padding-bottom: 5px;
 	}
 </style>
